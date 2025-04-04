@@ -1,2 +1,12 @@
 @import 'bootstrap';
 @import 'bootstrap-icons';
+
+.movies_list {
+    .flag {
+        display: inline-block;
+
+        img {
+            width: 25px;
+        }
+    }
+}
