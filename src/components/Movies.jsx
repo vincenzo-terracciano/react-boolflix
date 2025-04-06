@@ -28,6 +28,8 @@ export default function Movies() {
         return flagUrl
     }
 
+
+
     return (
         <>
             <div className="container mt-5">
@@ -36,8 +38,9 @@ export default function Movies() {
                         {
                             movies.map(movie => (
                                 <li key={`Movie - ${movie.id}`}>
-                                    <h6>Title: {movie.title}</h6>
-                                    <h6>Original Title: {movie.original_title}</h6>
+                                    <img src={Image(movie.poster_path)} alt={movie.title || movie.na} />
+                                    <h6>Title: {movie.title || movie.name}</h6>
+                                    <h6>Original Title: {movie.original_title || movie.original_name}</h6>
                                     <div className="flag">
                                         <strong>Language: </strong>
 
