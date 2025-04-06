@@ -28,7 +28,22 @@ export default function Movies() {
         return flagUrl
     }
 
+    function Image(path) {
+        const imageUrl = "https://image.tmdb.org/t/p/w342";
+        return imageUrl + path
+    }
 
+    function Stars(vote) {
+        const half = Math.ceil(vote / 2)
+        const stars = []
+
+        for (let i = 0; i < 5; i++) {
+            stars.push(i < half)
+        }
+        console.log(stars);
+
+        return stars
+    }
 
     return (
         <>
@@ -38,7 +53,7 @@ export default function Movies() {
                         {
                             movies.map(movie => (
                                 <li key={`Movie - ${movie.id}`}>
-                                    <img src={Image(movie.poster_path)} alt={movie.title || movie.na} />
+                                    <img src={Image(movie.poster_path)} alt={movie.title || movie.name} />
                                     <h6>Title: {movie.title || movie.name}</h6>
                                     <h6>Original Title: {movie.original_title || movie.original_name}</h6>
                                     <div className="flag">
@@ -52,7 +67,19 @@ export default function Movies() {
 
                                     </div>
 
-                                    <h6>Vote: {movie.vote_average}</h6>
+                                    <div className="reviews">
+                                        <h6>Vote: {movie.vote_average}</h6>
+
+                                        <div className="stars">
+                                            {Stars(movie.vote_average).map((full, index) => (
+                                                <i
+                                                    key={index}
+                                                    className="fa fa-star"
+                                                    style={{ color: full ? "gold" : "lightgray" }}
+                                                ></i>
+                                            ))}
+                                        </div>
+                                    </div>
                                 </li>
                             ))
                         }
