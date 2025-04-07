@@ -1,6 +1,27 @@
 @import 'bootstrap';
 @import 'bootstrap-icons';
 
+header {
+
+    .logo {
+        color: red;
+        font-size: 25px;
+        font-weight: 700;
+        text-decoration: none;
+        margin-right: 2rem;
+    }
+
+    .btn {
+        background-color: red;
+        color: white;
+
+        &:hover {
+            background-color: rgb(187, 0, 0);
+
+        }
+    }
+}
+
 .movies_list {
     .flag {
         display: inline-block;

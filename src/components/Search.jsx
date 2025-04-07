@@ -60,24 +60,46 @@ export default function Search() {
 
     return (
         <header>
-            <div className="container">
-                <div className="mb-3">
-                    <label htmlFor="title" className="form-label">Title</label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        name="title"
-                        id="title"
-                        aria-describedby="helpTitle"
-                        placeholder="Search the movie here"
-                        value={searchText}
-                        onChange={(e) => setSearchText(e.target.value)}
-                    />
-                    <small id="helpTitle" className="form-text text-muted">Type movie's title</small>
-                </div>
+            <nav
+                className="navbar navbar-expand-sm bg-black">
+                <div className="container">
+                    <a className="logo" href="/">
+                        BOOLFLIX
+                    </a>
+                    <div className="collapse navbar-collapse" id="collapsibleNavId">
+                        <ul className="navbar-nav me-auto mt-2 mt-lg-0">
+                            <li className="nav-item">
+                                <a className="nav-link text-white" to="/">Home</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link text-white" to="/chisiamo">Movies</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link text-white" to="/posts">TV Series</a>
+                            </li>
+                        </ul>
+                    </div>
 
-                <button onClick={handleChange} className="btn btn-primary">Search</button>
-            </div>
+                    <div className="search-bar d-flex gap-2">
+                        <input
+                            type="text"
+                            className="form-control"
+                            name="title"
+                            id="title"
+                            aria-describedby="helpTitle"
+                            placeholder="Search the movie here"
+                            value={searchText}
+                            onChange={(e) => setSearchText(e.target.value)}
+                        />
+                        <button onClick={handleChange} className="btn">Search</button>
+                    </div>
+
+                </div>
+            </nav>
+
+
+
+
 
 
         </header>
