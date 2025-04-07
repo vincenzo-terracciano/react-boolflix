@@ -47,45 +47,56 @@ export default function Movies() {
 
     return (
         <>
-            <div className="container mt-5">
-                <div className="movies_list">
-                    <ul>
-                        {
-                            movies.map(movie => (
-                                <li key={`Movie - ${movie.id}`}>
-                                    <img src={Image(movie.poster_path)} alt={movie.title || movie.name} />
-                                    <h6>Title: {movie.title || movie.name}</h6>
-                                    <h6>Original Title: {movie.original_title || movie.original_name}</h6>
-                                    <div className="flag">
-                                        <strong>Language: </strong>
+            <main>
+                <div className="container mt-5">
+                    <div className="movies_list">
+                        <div className="row">
+                            {
+                                movies.map(movie => (
+                                    <div className="col-3 g-4" key={`Movie - ${movie.id}`}>
+                                        <div className="card">
+                                            <img className="card-img-top" src={Image(movie.poster_path)} alt={movie.title || movie.name} />
+                                            <div className="card-overlay">
+                                                <div className="card-body">
+                                                    <h5>{movie.title || movie.name}</h5>
+                                                    <p><strong>Original Title: </strong>{movie.original_title || movie.original_name}</p>
+                                                    <div className="flag mb-3">
+                                                        <strong>Language: </strong>
 
-                                        {flag(movie.original_language) ? (
-                                            <img src={flag(movie.original_language)} alt={movie.original_language} />
-                                        ) : (
-                                            <span>{movie.original_language.toUpperCase()}</span>
-                                        )}
+                                                        {flag(movie.original_language) ? (
+                                                            <img src={flag(movie.original_language)} alt={movie.original_language} />
+                                                        ) : (
+                                                            <span>{movie.original_language.toUpperCase()}</span>
+                                                        )}
+                                                    </div>
 
-                                    </div>
+                                                    <div className="reviews">
+                                                        <p><strong>Vote: </strong>{movie.vote_average}</p>
 
-                                    <div className="reviews">
-                                        <h6>Vote: {movie.vote_average}</h6>
+                                                        <div className="stars">
+                                                            {Stars(movie.vote_average).map((full, index) => (
+                                                                <i
+                                                                    key={index}
+                                                                    className="fa fa-star"
+                                                                    style={{ color: full ? "gold" : "lightgray" }}
+                                                                ></i>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                    <p><strong>Overview: </strong>{movie.overview ? movie.overview : 'Overview not available.'}</p>
+                                                </div>
+                                            </div>
 
-                                        <div className="stars">
-                                            {Stars(movie.vote_average).map((full, index) => (
-                                                <i
-                                                    key={index}
-                                                    className="fa fa-star"
-                                                    style={{ color: full ? "gold" : "lightgray" }}
-                                                ></i>
-                                            ))}
                                         </div>
                                     </div>
-                                </li>
-                            ))
-                        }
-                    </ul>
+                                ))
+                            }
+                        </div>
+
+                    </div>
                 </div>
-            </div>
+            </main>
+
         </>
 
     )

@@ -3,12 +3,20 @@
 
 header {
 
+    nav .collapse ul li a:hover {
+        color: red;
+    }
+
     .logo {
         color: red;
         font-size: 25px;
         font-weight: 700;
         text-decoration: none;
         margin-right: 2rem;
+    }
+
+    .search-bar {
+        width: 320px;
     }
 
     .btn {
@@ -23,6 +31,12 @@ header {
 }
 
 .movies_list {
+    .card {
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
     .flag {
         display: inline-block;
 

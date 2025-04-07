@@ -1,5 +1,5 @@
 import { MoviesProvider } from "./contexts/GlobalContext"
-import Search from "./components/Search"
+import Header from "./components/Header"
 import Movies from "./components/Movies"
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <MoviesProvider>
-        <Search />
+        <Header />
         <Movies />
       </MoviesProvider>
     </>
