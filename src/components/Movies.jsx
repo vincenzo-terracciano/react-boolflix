@@ -56,7 +56,7 @@ export default function Movies() {
                                     <div className="col-3 g-4" key={`Movie - ${movie.id}`}>
                                         <div className="card">
                                             <img className="card-img-top" src={Image(movie.poster_path)} alt={movie.title || movie.name} />
-                                            <div className="card-overlay">
+                                            <div className="overlay">
                                                 <div className="card-body">
                                                     <h5>{movie.title || movie.name}</h5>
                                                     <p><strong>Original Title: </strong>{movie.original_title || movie.original_name}</p>
