@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useGlobalContext } from "../contexts/GlobalContext"
+import Search from "./Search"
 
 export default function Header() {
 
@@ -71,30 +72,18 @@ export default function Header() {
                     <div className="collapse navbar-collapse" id="collapsibleNavId">
                         <ul className="navbar-nav me-auto mt-2 mt-lg-0">
                             <li className="nav-item">
-                                <a className="nav-link text-white" to="/">Home</a>
+                                <a className="nav-link text-white" href="/">Home</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link text-white" to="/chisiamo">Movies</a>
+                                <a className="nav-link text-white" href="/chisiamo">Movies</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link text-white" to="/posts">TV Series</a>
+                                <a className="nav-link text-white" href="/posts">TV Series</a>
                             </li>
                         </ul>
                     </div>
 
-                    <div className="search-bar d-flex gap-2">
-                        <input
-                            type="text"
-                            className="form-control"
-                            name="title"
-                            id="title"
-                            aria-describedby="helpTitle"
-                            placeholder="Search movies and series here"
-                            value={searchText}
-                            onChange={(e) => setSearchText(e.target.value)}
-                        />
-                        <button onClick={handleChange} className="btn">Search</button>
-                    </div>
+                    <Search />
 
                 </div>
             </nav>
