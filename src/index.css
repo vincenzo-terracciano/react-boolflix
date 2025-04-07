@@ -30,18 +30,57 @@ header {
     }
 }
 
+main {
+    background-color: black;
+}
+
 .movies_list {
     .card {
         position: relative;
         overflow: hidden;
         cursor: pointer;
+        height: 380px;
+        border: none;
+
+        .card-img-top {
+            transition: transform 0.3s ease;
+            object-fit: cover;
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            opacity: 0;
+            overflow-y: auto;
+        }
+
+        .card-body {
+
+            p {
+                margin: 0;
+                padding: 0;
+            }
+        }
     }
 
     .flag {
-        display: inline-block;
+        display: block;
 
         img {
             width: 25px;
         }
     }
+}
+
+.card:hover .card-overlay {
+    opacity: 1;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.1);
 }

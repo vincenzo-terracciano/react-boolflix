@@ -48,7 +48,7 @@ export default function Movies() {
     return (
         <>
             <main>
-                <div className="container mt-5">
+                <div className="container">
                     <div className="movies_list">
                         <div className="row">
                             {
@@ -60,7 +60,7 @@ export default function Movies() {
                                                 <div className="card-body">
                                                     <h5>{movie.title || movie.name}</h5>
                                                     <p><strong>Original Title: </strong>{movie.original_title || movie.original_name}</p>
-                                                    <div className="flag mb-3">
+                                                    <div className="flag">
                                                         <strong>Language: </strong>
 
                                                         {flag(movie.original_language) ? (

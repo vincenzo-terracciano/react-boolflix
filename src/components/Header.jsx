@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { useGlobalContext } from "../contexts/GlobalContext"
-import { Link } from "react-router-dom";
 
 export default function Header() {
 
